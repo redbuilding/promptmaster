@@ -14,7 +14,9 @@ def _extract_rewritten_prompt(enhanced_text: str) -> str:
     capture = False
     for line in lines:
         # Match a header like '**Rewritten Prompt**' or 'Rewritten Prompt'
-        if re.match(r"^\s*(?:\*\*)?Rewritten\s+Prompt(?:\*\*)?\s*$", line, re.IGNORECASE):
+        if re.match(
+            r"^\s*(?:\*\*)?Rewritten\s+Prompt(?:\*\*)?\s*$", line, re.IGNORECASE
+        ):
             capture = True
             continue
         if capture:
@@ -100,7 +102,7 @@ def _format_tone(text: str) -> str | None:
     if re.search(r"\bwith\b", t):
         # Ensure it reads as '... tone with ...'
         parts = re.split(r"\bwith\b", t, maxsplit=1)
-        lead = parts[0].strip().rstrip(',')
+        lead = parts[0].strip().rstrip(",")
         tail = parts[1].strip()
         return f"Use a {lead} tone with {tail}."
     return f"Use a {t} tone."
@@ -122,29 +124,35 @@ def compose_unified_prompt(enhanced_text: str) -> str:
         audience = _strip_markdown(_first_line_value(enhanced_text, ["Audience"]))
         context = _strip_markdown(_first_line_value(enhanced_text, ["Context"]))
         ask = _strip_markdown(_first_line_value(enhanced_text, ["Ask"]))  # prefer Ask
-        task = _strip_markdown(_first_line_value(enhanced_text, ["Task"]))  # fallback if no Ask
-        tone = _strip_markdown(_first_line_value(enhanced_text, ["Tone", "Style"]))  # Style ~ Tone
+        task = _strip_markdown(
+            _first_line_value(enhanced_text, ["Task"])
+        )  # fallback if no Ask
+        tone = _strip_markdown(
+            _first_line_value(enhanced_text, ["Tone", "Style"])
+        )  # Style ~ Tone
         fmt = _strip_markdown(_first_line_value(enhanced_text, ["Format"]))
-        action = _clean_action(_first_line_value(enhanced_text, ["Action"])) 
+        action = _clean_action(_first_line_value(enhanced_text, ["Action"]))
 
         # Build a unified natural-language prompt
         unified_parts = []
 
         if role:
-            role = role.rstrip('.')
+            role = role.rstrip(".")
             unified_parts.append(f"Act as {role}.")
         if audience:
-            unified_parts.append(f"Your audience is {audience.rstrip('.') }.")
+            unified_parts.append(f"Your audience is {audience.rstrip('.')}.")
         if context:
-            unified_parts.append(f"Context: {context.rstrip('.') }.")
+            unified_parts.append(f"Context: {context.rstrip('.')}.")
         if ask:
             unified_parts.append(f"{ask.rstrip('.')}.")
         elif task:
-            unified_parts.append(f"{task.rstrip('.') }.")
+            unified_parts.append(f"{task.rstrip('.')}.")
         if action:
-            unified_parts.append(f"Be sure to {action.rstrip('.') }.")
+            unified_parts.append(f"Be sure to {action.rstrip('.')}.")
         if fmt:
-            unified_parts.append(f"Deliver the output in this format: {fmt.rstrip('.') }.")
+            unified_parts.append(
+                f"Deliver the output in this format: {fmt.rstrip('.')}."
+            )
         if tone:
             tone_sentence = _format_tone(tone)
             if tone_sentence:
