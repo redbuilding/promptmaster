@@ -1,0 +1,124 @@
+{
+  "frameworks": [
+    {
+      "name": "RTCO",
+      "description": "Role–Task–Context–Output: Define who the model is, what it must do, the background context, and the desired output format.",
+      "example": "Act as a UX researcher. Summarize user interviews into key themes in bullet format."
+    },
+    {
+      "name": "CoT",
+      "description": "Chain of Thought: Encourage step-by-step reasoning to improve logical accuracy and transparency.",
+      "example": "Let's solve this step by step, explaining each reasoning step clearly before concluding."
+    },
+    {
+      "name": "ReACT",
+      "description": "Reason + Act: Alternate between reasoning and taking actions or making observations.",
+      "example": "Thought: user wants higher engagement. Action: suggest A/B testing strategy."
+    },
+    {
+      "name": "TACT",
+      "description": "Task–Action–Context–Tone: Define what to do, how to do it, the background info, and the desired style.",
+      "example": "Task: Write product description. Action: Focus on benefits. Context: Luxury skincare brand. Tone: Elegant and persuasive."
+    },
+    {
+      "name": "TREE",
+      "description": "Think–Reason–Explain–Evaluate: A framework for reflective reasoning and justification.",
+      "example": "Think about the causes, reason through possible outcomes, explain your logic, and evaluate the best answer."
+    },
+    {
+      "name": "CRAFT",
+      "description": "Context–Role–Ask–Format–Tone: A framework to align the model’s role, purpose, and output format.",
+      "example": "Context: Writing for sustainability blog. Role: Journalist. Ask: Draft article. Format: 3 sections. Tone: Neutral."
+    },
+    {
+      "name": "Prompt Sandwich",
+      "description": "Instruction–Input–Reinforcement: Restate the task before and after the data to reduce drift.",
+      "example": "Instruction: Summarize. Input: Article text. Reinforcement: Keep summary under 100 words."
+    },
+    {
+      "name": "CRISPE",
+      "description": "Context–Role–Input–Steps–Parameters–Execution: A complete structured prompting format for clarity and control.",
+      "example": "Context: Academic summary. Role: Research assistant. Steps: Identify key arguments. Parameters: 200 words max."
+    },
+    {
+      "name": "CoT+SC",
+      "description": "Chain-of-Thought + Self-Consistency: Generate multiple reasoning paths and choose the most logical answer.",
+      "example": "Explore 3 possible solutions, compare reasoning, and select the most consistent answer."
+    },
+    {
+      "name": "RAP",
+      "description": "Role–Audience–Purpose: Simplifies communication tasks to focus on message alignment.",
+      "example": "Role: Marketing strategist. Audience: Startup founders. Purpose: Explain storytelling value."
+    },
+    {
+      "name": "ICED",
+      "description": "Instruction–Context–Example–Desired Output: Ensures clarity and consistency using explicit examples.",
+      "example": "Instruction: Write a press release. Context: Product launch. Example: 'Apple announces...'. Desired Output: 3 paragraphs."
+    },
+    {
+      "name": "MAPP",
+      "description": "Motivation–Action–Parameters–Product: Links purpose with execution in creative or strategic prompts.",
+      "example": "Motivation: Improve investor decks. Action: Analyze slides. Parameters: Focus on clarity. Product: Improvement list."
+    },
+    {
+      "name": "DIET",
+      "description": "Data–Instruction–Example–Type: Ideal for analytical tasks using structured data.",
+      "example": "Data: Sales table. Instruction: Identify top regions. Example: 'North America: +12%'. Type: Bullet summary."
+    },
+    {
+      "name": "SCQA",
+      "description": "Situation–Complication–Question–Answer: A narrative reasoning framework for structured storytelling.",
+      "example": "Situation: Sales down. Complication: Competition up. Question: Why? Answer: Weak retention strategy."
+    },
+    {
+      "name": "APE",
+      "description": "Ask–Process–Evaluate: Simple reasoning pattern for analytical responses.",
+      "example": "Ask: What's best platform? Process: Compare options. Evaluate: Choose one with reasoning."
+    },
+    {
+      "name": "PEEL",
+      "description": "Point–Evidence–Explain–Link: Structured writing for clarity and persuasion.",
+      "example": "Point: AI saves time. Evidence: Automates tasks. Explain: Frees creative effort. Link: Increases productivity."
+    },
+    {
+      "name": "PAIR",
+      "description": "Persona–Action–Input–Response: Used for conversational agents and dialogue structure.",
+      "example": "Persona: Customer support rep. Action: Handle complaints. Input: 'Item broken'. Response: Apologize and offer refund."
+    },
+    {
+      "name": "RAISE",
+      "description": "Role–Audience–Intent–Steps–Expectation: Ideal for instructional or educational writing.",
+      "example": "Role: Teacher. Audience: Beginners. Intent: Explain AI. Steps: Define, Illustrate, Apply. Expectation: Clear summary."
+    },
+    {
+      "name": "FEARS",
+      "description": "Format–Examples–Audience–Role–Style: Controls stylistic alignment and tone.",
+      "example": "Format: Tweet thread. Examples: @SahilBloom style. Audience: Founders. Role: Growth coach. Style: Smart, concise."
+    },
+    {
+      "name": "CUP",
+      "description": "Clarity–Usefulness–Personality: Framework for evaluating and improving text quality.",
+      "example": "Review output for clarity, usefulness, and human tone."
+    },
+    {
+      "name": "LEAP",
+      "description": "Learn–Evaluate–Apply–Produce: Reflective structure for synthesis and improvement.",
+      "example": "Learn from feedback. Evaluate patterns. Apply insights. Produce improved version."
+    },
+    {
+      "name": "GROW",
+      "description": "Goal–Reality–Options–Way Forward: Coaching and goal-oriented reasoning structure.",
+      "example": "Goal: Improve prompts. Reality: Lacking structure. Options: Study frameworks. Way Forward: Build library."
+    },
+    {
+      "name": "DEEP",
+      "description": "Define–Explore–Evaluate–Present: Analytical flow for structured reasoning or reports.",
+      "example": "Define the issue, explore causes, evaluate solutions, and present conclusions."
+    },
+    {
+      "name": "SCOR",
+      "description": "Situation–Challenge–Options–Recommendation: Used for strategic analysis and executive summaries.",
+      "example": "Situation: User churn rising. Challenge: Poor onboarding. Options: Improve flow, offer tutorials. Recommendation: Redesign onboarding."
+    }
+  ]
+}
